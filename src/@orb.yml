@@ -1,0 +1,10 @@
+version: 2.1
+
+description: >
+  The Foundation orb allows you to fetch enviornment data just like you would with our APIs.
+  This can make integrating with your build system super easy.
+
+display:
+  home_url: "https://foundation.teleology.io/"
+  source_url: "https://github.com/teleology-io/foundation-orb"
+

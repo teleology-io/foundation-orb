@@ -1,0 +1,29 @@
+version: 2.1
+
+commands: # a reusable command with parameters
+  foundation-environment:
+    parameters:
+      api-key:
+        type: string
+    steps:
+      - run: 
+          name: Foundation - Exporting Environment
+          command: |
+            curl -s https://raw.githubusercontent.com/teleology-io/foundation-cli/master/download.sh | bash
+            export FOUNDATION_API_URL=https://foundation-api.beta.teleology.io/v1/environment
+            ./foundation --api-key=<<parameters.api-key>> environment >> "$BASH_ENV"
+            source "$BASH_ENV"
+
+jobs:
+  my-job:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - foundation-environment:
+          api_key: ${API_KEY}
+      - run: echo $ENVIRONMENT
+
+workflows:
+  my-workflow:
+    jobs:
+      - my-job

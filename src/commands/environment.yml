@@ -1,0 +1,14 @@
+description: >
+  This command injects your foundation environment into the current $BASH_ENV
+
+parameters:
+  api_key:
+    type: env_var_name
+    description: Your Foundation Api-Key
+
+steps:
+  - run:
+      environment:
+        API_KEY: <<parameters.api_key>>
+      name: Foundation - Exporting Environment
+      command: <<include(scripts/environment.sh)>>

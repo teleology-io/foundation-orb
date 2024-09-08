@@ -1,0 +1,11 @@
+description: >
+  An example injecting environment variables into the $BASH_ENV
+usage:
+  version: 2.1
+  orbs:
+    foundation: teleology/foundation@0.0.1
+  workflows:
+    use-my-orb:
+      jobs:
+        - foundation/environment:
+            api_key: $API_KEY

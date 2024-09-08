@@ -1,0 +1,4 @@
+description: "Uses the base circleci image with the stable branch"
+
+docker:
+  - image: cimg/base:stable
