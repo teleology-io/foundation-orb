@@ -25,11 +25,13 @@ jobs:
   command-test:
     docker:
       - image: cimg/base:current
+    environment:
+      FOUNDATION_API_URL: https://foundation-api.beta.teleology.io
     steps:
       - checkout
       # Run your orb's commands to validate them.
       - <orb-name>/environment:
-          api_key: ${FOUNDATION_API_KEY}
+          api_key: $FOUNDATION_API_KEY
 workflows:
   test-deploy:
     jobs:
