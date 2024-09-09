@@ -30,8 +30,6 @@ workflows:
   curl_test:
     jobs:
       - test:
-          docker:
-            - image: cimg/base:2022.03
           steps:
             - run: |
                 export FOUNDATION_API_URL=https://foundation-api.beta.teleology.io/v1/environment
