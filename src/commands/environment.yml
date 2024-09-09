@@ -10,6 +10,7 @@ steps:
   - run:
       environment:
         FOUNDATION_API_KEY: <<parameters.api_key>>
+        FOUNDATION_API_URL: https://foundation-api.beta.teleology.io
       name: Foundation - Exporting Environment
       command: <<include(scripts/environment.sh)>>
   - store_artifacts:
