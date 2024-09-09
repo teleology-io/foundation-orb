@@ -12,6 +12,9 @@ steps:
         FOUNDATION_API_KEY: <<parameters.api_key>>
       name: Foundation - Exporting Environment
       command: <<include(scripts/environment.sh)>>
+  - store_artifacts:
+      path: /tmp/.env
+      destination: .env
   - run:
       name: Foundation - Setting Environment
-      command: source .env
+      command: source /tmp/.env
