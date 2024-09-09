@@ -27,7 +27,7 @@ jobs:
       - image: cimg/base:current
     environment:
       FOUNDATION_API_URL: https://foundation-api.beta.teleology.io
-      FOUNDATION_API_KEY: ${FOUNDATION_API_KEY}
+      FOUNDATION_API_KEY: $FOUNDATION_API_KEY
     steps:
       - checkout
       # Run your orb's commands to validate them.
