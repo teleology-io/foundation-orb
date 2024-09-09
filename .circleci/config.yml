@@ -27,13 +27,10 @@ workflows:
           orb_name: <orb-name>
           requires: [orb-tools/lint, orb-tools/pack, orb-tools/review, shellcheck/check]
           filters: *filters
-  curl_test:
-    jobs:
-      - test:
-          steps:
-            - run: |
-                export FOUNDATION_API_URL=https://foundation-api.beta.teleology.io/v1/environment
-                curl -s https://raw.githubusercontent.com/teleology-io/foundation-cli/master/download.sh | bash
-                ./foundation --api-key="${FOUNDATION_API_KEY}" environment >> "$BASH_ENV"
-                source "$BASH_ENV"
-            - run: echo $ENVIRONMENT
+      - run: |
+          export FOUNDATION_API_URL=https://foundation-api.beta.teleology.io/v1/environment
+          curl -s https://raw.githubusercontent.com/teleology-io/foundation-cli/master/download.sh | bash
+          ./foundation --api-key="${FOUNDATION_API_KEY}" environment >> "$BASH_ENV"
+          source "$BASH_ENV"
+      - run: echo $ENVIRONMENT
+            
