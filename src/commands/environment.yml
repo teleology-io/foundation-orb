@@ -3,7 +3,7 @@ description: >
 
 parameters:
   api_key:
-    type: env_var_name
+    type: string
     description: Your Foundation Api-Key
 
 steps:
