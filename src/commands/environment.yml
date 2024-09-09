@@ -14,4 +14,4 @@ steps:
       command: <<include(scripts/environment.sh)>>
   - run:
       name: Foundation - Setting Environment
-      command: . "$BASH_ENV"
+      command: source .env
