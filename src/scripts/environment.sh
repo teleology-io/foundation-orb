@@ -2,3 +2,4 @@
 # shellcheck source=/dev/null
 
 curl -s https://raw.githubusercontent.com/teleology-io/foundation-cli/master/download.sh | bash
+mv foundation /usr/local/bin

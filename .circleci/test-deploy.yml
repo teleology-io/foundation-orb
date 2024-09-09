@@ -33,9 +33,7 @@ jobs:
       # Run your orb's commands to validate them.
       - <orb-name>/environment:
           api_key: ${FOUNDATION_API_KEY}
-      - run: echo $FOUNDATION_API_URL
-      - run: echo ${FOUNDATION_API_KEY}
-      - run: ./foundation environment
+      - run: source <(./foundation env)
       - run: echo $ENVIRONMENT
 workflows:
   test-deploy:
